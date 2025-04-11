@@ -23,6 +23,7 @@ Type Min(Type num1, Type num2) {
 	}
 }
 
+//テンプレートをオーバーライト
 template<>
 char Min(char char1, char char2) {
 	printf("数字以外は代入できません");
