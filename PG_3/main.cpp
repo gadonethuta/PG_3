@@ -20,8 +20,8 @@ int main() {
 	printf("働きたい時間を入力(-1で止まる)：");
 	scanf_s("%d", &workHours);
 
-	//-1入れたらループから出る
-	while (workHours != -1) {
+	//０以下入れたらループから出る
+	while (workHours < 0) {
 		CompareWage(workHours);
 		printf("働きたい時間を入力(-1で止まる)：");
 		scanf_s("%d", &workHours);
