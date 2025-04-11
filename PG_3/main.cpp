@@ -34,10 +34,9 @@ void CompareWage(int hours) {
 	int normalWage = 1072;
 	int totalNormalWage = normalWage * hours;
 	int baseRecursiveWage = 100;
-	int recursiveWage = 0;
-
+	int totalRecursiveWage = 0;
 	//再帰関数を呼ぶ
-	int totalRecursiveWage = CalculateWage(hours, baseRecursiveWage, recursiveWage);
+	totalRecursiveWage = CalculateWage(hours, baseRecursiveWage, totalRecursiveWage);
 	
 	printf("一般的な賃金：%d, 再帰的な賃金：%d\n", totalNormalWage, totalRecursiveWage);
 	
