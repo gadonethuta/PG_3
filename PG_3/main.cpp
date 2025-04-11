@@ -3,36 +3,45 @@
 /// <summary>
 /// 2つの賃金を比べる
 /// </summary>
-/// <param name="num1"></param>
-/// <param name="num2"></param>
-/// <param name="totalWage"></param>
-/// <returns></returns>
-int CompareWage(int hours);
+/// <param name="hours">働きたい時間</param>
+void CompareWage(int hours);
 
+/// <summary>
+/// 2つの賃金を比べる
+/// </summary>
+/// <param name="hours">残り時間</param>
+/// <param name="wage">ベース</param>
+/// <param name="totalWage">再帰する賃金</param>
+/// <returns>トータル</returns>
 int CalculateWage(int hours, int wage, int totalWage);
 
 int main() {
 	int workHours = 0;
-	//働きたい時間入力
+	printf("働きたい時間を入力(-1で止まる)：");
 	scanf_s("%d", &workHours);
 
 	//-1入れたらループから出る
 	while (workHours != -1) {
 		CompareWage(workHours);
+		printf("働きたい時間を入力(-1で止まる)：");
 		scanf_s("%d", &workHours);
 	}
 	
 	return 0;
 }
 
-int CompareWage(int hours) {
+void CompareWage(int hours) {
 	int normalWage = 1072;
 	int totalNormalWage = normalWage * hours;
 	int baseRecursiveWage = 100;
 	int recursiveWage = 0;
+
+	//再帰関数を呼ぶ
 	int totalRecursiveWage = CalculateWage(hours, baseRecursiveWage, recursiveWage);
+	
 	printf("一般的な賃金：%d, 再帰的な賃金：%d\n", totalNormalWage, totalRecursiveWage);
-	return 0;
+	
+	return;
 }
 
 int CalculateWage(int hours, int wage, int totalWage) {
