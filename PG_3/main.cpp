@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /// <summary>
-/// 2つの賃金を比べる
+/// 2つの賃金を描画する
 /// </summary>
 /// <param name="hours">働きたい時間</param>
 void CompareWage(int hours);
@@ -31,6 +31,7 @@ int main() {
 }
 
 void CompareWage(int hours) {
+	//マジックナンバーがないように初期化
 	int normalWage = 1072;
 	int totalNormalWage = normalWage * hours;
 	int baseRecursiveWage = 100;
@@ -48,9 +49,12 @@ int CalculateWage(int hours, int wage, int totalWage) {
 		wage = (wage * 2) - 50;
 		totalWage += wage;
 		hours -= 1;
+		//再帰関数を呼ぶ
 		return CalculateWage(hours, wage, totalWage);
 	} else if (hours == 1) {
+		//1時間目は100だけ
 		totalWage += 100;
 	}
+	//返す値
 	return totalWage;
 }
