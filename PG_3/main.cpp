@@ -5,7 +5,7 @@
 
 typedef void (*newType)(int, int);
 
-
+void SetTimeout(newType func, int second);
 
 int main() {
 	//ランダムのたねを作る
@@ -30,4 +30,8 @@ int main() {
 	}
 
 	return 0;
+}
+
+void SetTimeout(newType func, int second) {
+	
 }
