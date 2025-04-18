@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <Windows.h>
+
+typedef int (*newType)(int, int);//こうしたほうがいい
+typedef void (*testType)();
 
 void PrintHelloWorld() {
 	printf("Hello World!\n");
@@ -20,6 +24,11 @@ int Division(int a, int b) {
 	return a / b;
 }
 
+void SetTimeout(testType p, int second) {
+	Sleep(second * 1000);
+	p();
+}
+
 int main() {
 	void (*pFunc)();
 	pFunc = PrintHelloWorld;
@@ -37,7 +46,7 @@ int main() {
 	calc = Subtract;
 	printf("calc = %d\n", calc(l, h));
 
-	int (*funcArray[4])(int, int) {
+	newType funcArray[4]{
 		Add,
 		Subtract,
 		Multiply,
@@ -48,5 +57,8 @@ int main() {
 		printf("funcArray[%d] = %d\n", i, funcArray[i](l, h));
 	}
 
+	testType p;
+	p = PrintHelloWorld;
+	SetTimeout(p, 5);
 	return 0;
 }
