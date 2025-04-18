@@ -12,6 +12,14 @@ int Subtract(int a, int b) {
 	return a - b;
 }
 
+int Multiply(int a, int b) {
+	return a * b;
+}
+
+int Division(int a, int b) {
+	return a / b;
+}
+
 int main() {
 	void (*pFunc)();
 	pFunc = PrintHelloWorld;
@@ -28,6 +36,17 @@ int main() {
 
 	calc = Subtract;
 	printf("calc = %d\n", calc(l, h));
+
+	int (*funcArray[4])(int, int) {
+		Add,
+		Subtract,
+		Multiply,
+		Division
+	};
+
+	for (int i = 0; i < 4; i++) {
+		printf("funcArray[%d] = %d\n", i, funcArray[i](l, h));
+	}
 
 	return 0;
 }
