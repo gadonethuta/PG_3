@@ -59,7 +59,7 @@ void SetTimeout(newType func, int a, int b) {
 void Compare(int *diceResult, int *playerGuess) {
 	//サイコロの結果とプレイヤーの答えを比べる
 	if (*diceResult % 2 == *playerGuess) {
-		printf("正解\n");
+		printf("正解, サイコロは%dでした。\n", *diceResult);
 	} else {
 		printf("不正解, サイコロは%dでした。\n", *diceResult);
 	}
