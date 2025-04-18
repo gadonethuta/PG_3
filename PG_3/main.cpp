@@ -9,10 +9,13 @@ int main() {
 	//ランダムのたねを作る
 	srand(time(nullptr));
 
-	int diceRandom = -1;//エラーならー１のため初期化
+	//エラーならー１のため初期化
+	int diceRandom = -1;
+	int playerInput = -1;
+
 	diceRandom = rand() % 6 + 1;
 
-	printf("%d/n", diceRandom);
+	printf("random = %d\n", diceRandom);
 
 	return 0;
 }
