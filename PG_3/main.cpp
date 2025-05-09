@@ -41,9 +41,7 @@ int main(int argc, const char *argv[]) {
 
 	//入力 (ラムダ式はここ)
 	printf("偶数の場合は0、奇数の場合は1を押してください : ");
-	auto playerIn = [](int i) {
-		return i;
-		};
+	auto playerIn = [](int i) {return i;};
 	
 
 	//時間立ってから関数ポインターを呼ぶ
