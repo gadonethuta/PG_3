@@ -30,22 +30,21 @@ int main(int argc, const char *argv[]) {
 	pFunc = Compare;
 
 	//エラーならー１のため初期化
-	int diceRandom = -1;
 	int playerInput = -1;
 
 	//サイコロをランダムする
-	diceRandom = rand() % 6 + 1;
+	auto diceRandom = [](int i) { return rand() % i + 1; };
 
 	//試してみるため
 	//printf("random = %d\n", diceRandom);
 
 	//入力 (ラムダ式はここ)
 	printf("偶数の場合は0、奇数の場合は1を押してください : ");
-	auto playerIn = [](int i) {return i;};
+	scanf_s("%d", &playerInput);
 	
 
 	//時間立ってから関数ポインターを呼ぶ
-	SetTimeout(pFunc, diceRandom, playerIn(scanf_s("%d", &playerInput)));
+	SetTimeout(pFunc, diceRandom(6), playerInput);
 
 	return 0;
 }
