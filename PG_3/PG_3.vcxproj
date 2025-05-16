@@ -129,9 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
