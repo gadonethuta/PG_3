@@ -32,13 +32,13 @@ int main(int argc, const char *argv[]) {
 	//エラーならー１のため初期化
 	int playerInput = -1;
 
-	//サイコロをランダムする
+	//サイコロをランダムする (ラムダ式はここ)
 	auto diceRandom = [](int i) { return rand() % i + 1; };
 
 	//試してみるため
 	//printf("random = %d\n", diceRandom);
 
-	//入力 (ラムダ式はここ)
+	//入力
 	printf("偶数の場合は0、奇数の場合は1を押してください : ");
 	scanf_s("%d", &playerInput);
 	
