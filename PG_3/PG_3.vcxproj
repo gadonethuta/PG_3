@@ -131,6 +131,7 @@
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="IShape.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="IShape.h" />
+    <ClInclude Include="Rect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
