@@ -3,9 +3,9 @@
 class IShape {
 public:
 	IShape();
-	~IShape();
+	virtual ~IShape() = 0;
 
-	//攻撃する関数
+	//インターフェース
 	virtual void Size() = 0;
 	virtual void Draw() = 0;
 protected:

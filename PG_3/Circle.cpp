@@ -2,11 +2,13 @@
 #include <stdio.h>
 
 Circle::Circle() {
+	//値代入
 	pi = 3.14f;
 	radius = 10.0f;
 }
 
 Circle::~Circle() {
+	printf("円を消す\n");
 }
 
 void Circle::Size() {
