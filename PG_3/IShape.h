@@ -3,7 +3,7 @@
 class IShape {
 public:
 	IShape();
-	virtual ~IShape();
+	~IShape();
 
 	//攻撃する関数
 	virtual void Size() = 0;
