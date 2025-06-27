@@ -47,6 +47,21 @@ int main() {
 	for (vector<int>::iterator it_g = g.begin(); it_g != g.end(); it_g++) {
 		cout << *it_g << endl;
 	}
+	cout << "---------------" << endl;
+
+	//std::要らないusing namespace std;使っているから
+	list<int> lst{ 1,2,3 };
+	auto itr = lst.begin();
+	cout << *itr << endl;
+	*itr = 9;
+	cout << *itr << endl;
+	itr++;
+	*itr = 10;
+	cout << *itr << endl;
+	cout << endl;
+	for (itr = lst.begin(); itr != lst.end(); itr++) {
+		cout << *itr << endl;
+	}
 
 	return 0;
 }
