@@ -11,7 +11,7 @@ using namespace std;
 /// </summary>
 /// <param name="s">email</param>
 /// <returns>emailの中の数字</returns>
-int extractNumberAfterG(const string& s) {
+int extractNumber(const string& s) {
 	// string の中の 'k' の位置を探す
     int kPos = s.find('k');
     if (kPos == string::npos || kPos + 1 >= s.length()) {
@@ -40,7 +40,7 @@ int main() {
 
     //ソートする、数字だけもらうために関数を使う
     sort(emails.begin(), emails.end(), [](const string& a, const string& b) {
-        return extractNumberAfterG(a) < extractNumberAfterG(b);
+        return extractNumber(a) < extractNumber(b);
         });
 
 	//スープしてソートしたものを出力する
