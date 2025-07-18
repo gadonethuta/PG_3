@@ -2,7 +2,6 @@
 #include <string>
 #include <chrono>
 
-
 int main() {
     
     std::string a(1000000, 'a');
