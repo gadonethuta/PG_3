@@ -1,29 +1,52 @@
 #include <iostream>
-#include <stdio.h>
-#include <thread>
+#include <string>
+#include <chrono>
 
-/// <summary>
-/// threadで使うための関数
-/// </summary>
-/// <param name="num">threadの番号</param>
-void Display(int num) {
-    printf("thread %d\n", num);
-}
 
 int main() {
-    //一気にjoinすると順番で並べないため一個ずつjoinします
+    
+    std::string a(1000000, 'a');
+    std::string b;
+    std::string c;
 
-    //thread 1
-    std::thread th1(Display, 1);
-    th1.join();
+    std::cout << "1,000,000 の文字を移動とコピーで比較しました" << std::endl;
+
+#pragma region stringCopy
+
+    //　タイマーの始まり
+    auto timerStart = std::chrono::high_resolution_clock::now();
     
-    //thread 2
-    std::thread th2(Display, 2);
-    th2.join();
+    //string を copy　する
+    b = a;
     
-    //thread 3
-    std::thread th3(Display, 3);
-    th3.join();
+    // タイマーの終わり
+    auto timerEnd = std::chrono::high_resolution_clock::now();
+
+    // マイクロ秒で計算
+    auto timerDuration = std::chrono::duration_cast<std::chrono::microseconds>(timerEnd - timerStart);
+    //　出力
+    std::cout << "コピー : " << timerDuration.count() << " マイクロ秒\n";
+
+#pragma endregion
+
+#pragma region stringMove
+
+    //　タイマーの始まり
+    timerStart = std::chrono::high_resolution_clock::now();
+    
+    //string を move する
+    c = std::move(a);
+    
+    // タイマーの終わり
+    timerEnd = std::chrono::high_resolution_clock::now();
+
+    // マイクロ秒で計算
+    timerDuration = std::chrono::duration_cast<std::chrono::microseconds>(timerEnd - timerStart);
+    //　出力
+    std::cout << "移動 : " << timerDuration.count() << " マイクロ秒\n";
+
+
+#pragma endregion
 
     return 0;
 }
